@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-10-22T01:24:15.083872+00:00",
+    "schema_version": "1.0.0",
+    "check_frequency_minutes": 30
+  },
+  "routing_directive": {
+    "recommended_primary_llm": "openai",
+    "action": "All primary foundation gateways operational. Route traffic normally."
+  },
+  "providers": {
+    "openai": {
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
+    },
+    "anthropic": {
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
+    },
+    "github_copilot": {
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
+    },
+    "cloudflare": {
+      "status": "DEGRADED",
+      "severity": "major",
+      "description": "Partial System Outage",
+      "active_incident_count": 2,
+      "incidents": [
+        {
+          "name": "Network congestion in Portland and Seattle, US",
+          "impact": "minor",
+          "status": "monitoring"
+        },
+        {
+          "name": "Incorrect geo location for some Cloudflare WARP users",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
+    },
+    "huggingface": {
+      "status": "UNREACHABLE",
+      "severity": "critical",
+      "description": "Provider health probe timed out.",
+      "active_incident_count": 0,
+      "incidents": []
+    }
+  }
+}
