@@ -2,8 +2,8 @@ name: Agent Canary 30-Min Pulse
 
 on:
   schedule:
-    # Runs every 30 minutes at off-peak minutes 12 and 42 past the hour
-    - cron: '12,42 * * * *'
+    # Runs at off-peak minutes 14 and 44 past the hour
+    - cron: '14,44 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -40,8 +40,9 @@ jobs:
           git add -A latest/ data/
           
           if git diff --staged --quiet; then
-            echo "No changes detected. Skipping commit."
+            echo "No gateway status changes detected. Skipping commit."
           else
             git commit -m "chore(canary): record 30-min provider pulse [skip ci]"
+            git pull --rebase origin main
             git push origin main
           fi
