@@ -2,8 +2,8 @@ name: Agent Canary 30-Min Pulse
 
 on:
   schedule:
-    # Runs every 30 minutes, 24/7
-    - cron: '*/30 * * * *'
+    # Runs at 12 and 42 minutes past every hour (bypasses :00 and :30 queue traffic)
+    - cron: '12,42 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,11 +15,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git clone --depth 1 "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" .
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install lightweight dependencies
+      - name: Install dependencies
         run: |
           python3 -m pip install --break-system-packages --upgrade pip
           python3 -m pip install --break-system-packages -r requirements.txt
@@ -38,6 +38,5 @@ jobs:
             echo "No gateway status changes detected. Skipping commit."
           else
             git commit -m "chore(canary): update AI provider pulse [skip ci]"
-            git pull --rebase origin main
             git push origin main
           fi
