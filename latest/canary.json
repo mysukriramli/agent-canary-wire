@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-22T08:17:48.546520+00:00",
+    "timestamp_utc": "2026-10-22T13:54:22.293767+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,16 +11,10 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partial System Degradation",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "ChatGPT conversion failures in India, Japan and Korea. And Response API errors",
-          "impact": "minor",
-          "status": "monitoring"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
