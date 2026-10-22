@@ -17,7 +17,7 @@ OUTPUT_JSON = "latest/canary.json"
 OUTPUT_LLMS = "latest/llms.txt"
 HISTORY_BASE_DIR = "data/history"
 
-# Authoritative endpoints: Atlassian Statuspage vs Instatus
+# Atlassian Statuspage endpoints
 STATUSPAGE_PROVIDERS = {
     "openai": "https://status.openai.com/api/v2/summary.json",
     "anthropic": "https://status.anthropic.com/api/v2/summary.json",
@@ -25,8 +25,9 @@ STATUSPAGE_PROVIDERS = {
     "cloudflare": "https://www.cloudflarestatus.com/api/v2/summary.json"
 }
 
-INSTATUS_PROVIDERS = {
-    "huggingface": "https://status.huggingface.co/summary.json"
+# Better Stack endpoints (official public endpoint is /index.json)
+BETTERSTACK_PROVIDERS = {
+    "huggingface": "https://status.huggingface.co/index.json"
 }
 
 def inspect_statuspage_provider(name: str, url: str) -> dict:
@@ -53,7 +54,6 @@ def inspect_statuspage_provider(name: str, url: str) -> dict:
             for inc in incidents if inc.get("status") != "resolved"
         ]
 
-        # Only major or critical impacts should trigger an agent failover
         normalized_status = "DEGRADED" if indicator in ["major", "critical"] else "OPERATIONAL"
 
         return {
@@ -73,7 +73,7 @@ def inspect_statuspage_provider(name: str, url: str) -> dict:
             "incidents": []
         }
 
-def inspect_instatus_provider(name: str, url: str) -> dict:
+def inspect_betterstack_provider(name: str, url: str) -> dict:
     headers = {"User-Agent": "Mozilla/5.0 (compatible; Agent-Canary-Wire/1.0)"}
     try:
         res = requests.get(url, headers=headers, timeout=10)
@@ -87,24 +87,26 @@ def inspect_instatus_provider(name: str, url: str) -> dict:
             }
 
         data = res.json()
-        page_status = data.get("page", {}).get("status", "UP").upper()
-        active_incidents = data.get("activeIncidents", [])
+        attributes = data.get("data", {}).get("attributes", {})
+        aggregate_state = attributes.get("aggregate_state", "operational").lower()
 
-        normalized_status = "OPERATIONAL" if page_status == "UP" else "DEGRADED"
+        normalized_status = "OPERATIONAL" if aggregate_state in ["operational", "maintenance"] else "DEGRADED"
+        severity = "none" if aggregate_state == "operational" else ("minor" if aggregate_state == "maintenance" else "major")
+        description = f"System status: {aggregate_state}"
 
         return {
             "status": normalized_status,
-            "severity": "none" if page_status == "UP" else "major",
-            "description": "All systems operational" if page_status == "UP" else "Active issues reported",
-            "active_incident_count": len(active_incidents),
-            "incidents": [{"name": inc.get("name"), "impact": inc.get("impact")} for inc in active_incidents[:2]]
+            "severity": severity,
+            "description": description,
+            "active_incident_count": 0,
+            "incidents": []
         }
     except Exception as e:
-        logging.warning(f"Failed to check Instatus for {name}: {e}")
+        logging.warning(f"Failed to check BetterStack provider {name}: {e}")
         return {
             "status": "UNREACHABLE",
             "severity": "critical",
-            "description": "Instatus health probe timed out.",
+            "description": "Provider health probe timed out.",
             "active_incident_count": 0,
             "incidents": []
         }
@@ -129,8 +131,8 @@ def main():
     for name, url in STATUSPAGE_PROVIDERS.items():
         results[name] = inspect_statuspage_provider(name, url)
 
-    for name, url in INSTATUS_PROVIDERS.items():
-        results[name] = inspect_instatus_provider(name, url)
+    for name, url in BETTERSTACK_PROVIDERS.items():
+        results[name] = inspect_betterstack_provider(name, url)
 
     recommended_llm, directive = determine_routing(results)
     now = datetime.now(timezone.utc)
