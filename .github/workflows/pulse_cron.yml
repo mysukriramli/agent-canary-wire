@@ -2,7 +2,7 @@ name: Agent Canary 30-Min Pulse
 
 on:
   schedule:
-    # Runs at 12 and 42 minutes past every hour (bypasses :00 and :30 queue traffic)
+    # Runs every 30 minutes at off-peak minutes 12 and 42 past the hour
     - cron: '12,42 * * * *'
   workflow_dispatch:
 
@@ -14,15 +14,20 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Install dependencies
         run: |
-          python3 -m pip install --break-system-packages --upgrade pip
-          python3 -m pip install --break-system-packages -r requirements.txt
+          python3 -m pip install --upgrade pip
+          python3 -m pip install requests
 
       - name: Execute Canary Pulse Check
         run: |
@@ -32,7 +37,7 @@ jobs:
         run: |
           git config user.name "canary-bot[bot]"
           git config user.email "canary-bot@users.noreply.github.com"
-          git add latest/
+          git add -A latest/
           
           if git diff --staged --quiet; then
             echo "No gateway status changes detected. Skipping commit."
