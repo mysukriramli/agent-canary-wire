@@ -17,15 +17,19 @@ OUTPUT_JSON = "latest/canary.json"
 OUTPUT_LLMS = "latest/llms.txt"
 HISTORY_BASE_DIR = "data/history"
 
-TARGET_PROVIDERS = {
+# Authoritative endpoints: Atlassian Statuspage vs Instatus
+STATUSPAGE_PROVIDERS = {
     "openai": "https://status.openai.com/api/v2/summary.json",
     "anthropic": "https://status.anthropic.com/api/v2/summary.json",
     "github_copilot": "https://www.githubstatus.com/api/v2/summary.json",
-    "cloudflare": "https://www.cloudflarestatus.com/api/v2/summary.json",
-    "huggingface": "https://status.huggingface.co/api/v2/summary.json"
+    "cloudflare": "https://www.cloudflarestatus.com/api/v2/summary.json"
 }
 
-def inspect_provider(name: str, url: str) -> dict:
+INSTATUS_PROVIDERS = {
+    "huggingface": "https://status.huggingface.co/summary.json"
+}
+
+def inspect_statuspage_provider(name: str, url: str) -> dict:
     headers = {"User-Agent": "Mozilla/5.0 (compatible; Agent-Canary-Wire/1.0)"}
     try:
         res = requests.get(url, headers=headers, timeout=10)
@@ -34,22 +38,23 @@ def inspect_provider(name: str, url: str) -> dict:
                 "status": "UNKNOWN",
                 "indicator": "minor",
                 "description": f"HTTP {res.status_code}",
-                "active_incident_count": 1,
+                "active_incident_count": 0,
                 "incidents": []
             }
-        
+
         data = res.json()
         status_info = data.get("status", {})
-        indicator = status_info.get("indicator", "none")
+        indicator = status_info.get("indicator", "none").lower()
         description = status_info.get("description", "Operational")
-        
+
         incidents = data.get("incidents", [])
         active = [
             {"name": inc.get("name"), "impact": inc.get("impact"), "status": inc.get("status")}
             for inc in incidents if inc.get("status") != "resolved"
         ]
 
-        normalized_status = "OPERATIONAL" if indicator in ["none", "operational"] else "DEGRADED"
+        # Only major or critical impacts should trigger an agent failover
+        normalized_status = "DEGRADED" if indicator in ["major", "critical"] else "OPERATIONAL"
 
         return {
             "status": normalized_status,
@@ -64,6 +69,42 @@ def inspect_provider(name: str, url: str) -> dict:
             "status": "UNREACHABLE",
             "severity": "critical",
             "description": "Provider health probe timed out.",
+            "active_incident_count": 0,
+            "incidents": []
+        }
+
+def inspect_instatus_provider(name: str, url: str) -> dict:
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; Agent-Canary-Wire/1.0)"}
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        if res.status_code != 200:
+            return {
+                "status": "UNKNOWN",
+                "indicator": "minor",
+                "description": f"HTTP {res.status_code}",
+                "active_incident_count": 0,
+                "incidents": []
+            }
+
+        data = res.json()
+        page_status = data.get("page", {}).get("status", "UP").upper()
+        active_incidents = data.get("activeIncidents", [])
+
+        normalized_status = "OPERATIONAL" if page_status == "UP" else "DEGRADED"
+
+        return {
+            "status": normalized_status,
+            "severity": "none" if page_status == "UP" else "major",
+            "description": "All systems operational" if page_status == "UP" else "Active issues reported",
+            "active_incident_count": len(active_incidents),
+            "incidents": [{"name": inc.get("name"), "impact": inc.get("impact")} for inc in active_incidents[:2]]
+        }
+    except Exception as e:
+        logging.warning(f"Failed to check Instatus for {name}: {e}")
+        return {
+            "status": "UNREACHABLE",
+            "severity": "critical",
+            "description": "Instatus health probe timed out.",
             "active_incident_count": 0,
             "incidents": []
         }
@@ -84,8 +125,12 @@ def determine_routing(results: dict) -> tuple:
 def main():
     logging.info("Starting Agent Canary pulse check...")
     results = {}
-    for name, url in TARGET_PROVIDERS.items():
-        results[name] = inspect_provider(name, url)
+
+    for name, url in STATUSPAGE_PROVIDERS.items():
+        results[name] = inspect_statuspage_provider(name, url)
+
+    for name, url in INSTATUS_PROVIDERS.items():
+        results[name] = inspect_instatus_provider(name, url)
 
     recommended_llm, directive = determine_routing(results)
     now = datetime.now(timezone.utc)
@@ -126,12 +171,11 @@ def main():
     with open(OUTPUT_LLMS, "w", encoding="utf-8") as f:
         f.write(llms_text)
 
-    # 2. Append to permanent daily time-series ledger (Database Keeping)
+    # 2. Append to permanent daily time-series ledger
     month_dir = os.path.join(HISTORY_BASE_DIR, year_str, month_str)
     os.makedirs(month_dir, exist_ok=True)
     history_file = os.path.join(month_dir, f"{date_str}.jsonl")
 
-    # One compact JSON line per 30-minute run
     ledger_entry = {
         "timestamp_utc": now_iso,
         "recommended_route": recommended_llm,
@@ -144,6 +188,7 @@ def main():
 
     with open(history_file, "a", encoding="utf-8") as f:
         f.write(json.dumps(ledger_entry) + "\n")
+        f.flush()
 
     logging.info(f"Canary pulse complete. Appended run to {history_file}.")
 
