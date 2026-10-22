@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-22T18:34:09.888728+00:00",
+    "timestamp_utc": "2026-10-22T21:55:59.970677+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,10 +11,16 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "New Ad Accounts failing to provision admins",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
