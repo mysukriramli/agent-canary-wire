@@ -25,17 +25,23 @@ TARGET_PROVIDERS = {
 }
 
 def inspect_provider(name: str, url: str) -> dict:
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; Agent-Canary-Wire/1.0)"}
     try:
-        res = requests.get(url, timeout=8)
+        res = requests.get(url, headers=headers, timeout=10)
         if res.status_code != 200:
-            return {"status": "UNKNOWN", "indicator": "minor", "active_incidents": 1}
+            return {
+                "status": "UNKNOWN",
+                "indicator": "minor",
+                "description": f"HTTP {res.status_code}",
+                "active_incident_count": 1,
+                "incidents": []
+            }
         
         data = res.json()
         status_info = data.get("status", {})
-        indicator = status_info.get("indicator", "none")  # none, minor, major, critical
+        indicator = status_info.get("indicator", "none")
         description = status_info.get("description", "Operational")
         
-        # Filter for unresolved incidents
         incidents = data.get("incidents", [])
         active = [
             {"name": inc.get("name"), "impact": inc.get("impact"), "status": inc.get("status")}
@@ -61,8 +67,7 @@ def inspect_provider(name: str, url: str) -> dict:
             "incidents": []
         }
 
-def determine_routing(results: dict) -> tuple[str, str]:
-    """Selects the optimal healthy LLM provider based on real-time degradation."""
+def determine_routing(results: dict) -> tuple:
     openai_ok = results.get("openai", {}).get("status") == "OPERATIONAL"
     anthropic_ok = results.get("anthropic", {}).get("status") == "OPERATIONAL"
 
