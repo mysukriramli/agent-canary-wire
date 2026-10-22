@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-22T07:00:55.846667+00:00",
+    "timestamp_utc": "2026-10-22T08:13:35.626648+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
   "routing_directive": {
-    "recommended_primary_llm": "local_fallback",
-    "action": "EMERGENCY: Both major frontier gateways degraded. Route to local or backup provider."
+    "recommended_primary_llm": "openai",
+    "action": "All primary foundation gateways operational. Route traffic normally."
   },
   "providers": {
     "openai": {
-      "status": "DEGRADED",
+      "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partial System Degradation",
       "active_incident_count": 1,
@@ -23,17 +23,11 @@
       ]
     },
     "anthropic": {
-      "status": "DEGRADED",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Elevated errors affecting Connectors",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "github_copilot": {
       "status": "OPERATIONAL",
@@ -58,7 +52,7 @@
     "huggingface": {
       "status": "UNREACHABLE",
       "severity": "critical",
-      "description": "Provider health probe timed out.",
+      "description": "Instatus health probe timed out.",
       "active_incident_count": 0,
       "incidents": []
     }

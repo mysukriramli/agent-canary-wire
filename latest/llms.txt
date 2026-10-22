@@ -1,10 +1,10 @@
-# AI Provider Canary Status (2026-10-22T07:00:55.846667+00:00)
-> Recommended Gateway: `LOCAL_FALLBACK`
+# AI Provider Canary Status (2026-10-22T08:13:35.626648+00:00)
+> Recommended Gateway: `OPENAI`
 
-**Directive:** EMERGENCY: Both major frontier gateways degraded. Route to local or backup provider.
+**Directive:** All primary foundation gateways operational. Route traffic normally.
 
-- OpenAI: DEGRADED (Partial System Degradation)
-- Anthropic: DEGRADED (Partially Degraded Service)
+- OpenAI: OPERATIONAL (Partial System Degradation)
+- Anthropic: OPERATIONAL (All Systems Operational)
 - GitHub: OPERATIONAL (All Systems Operational)
 - Cloudflare: DEGRADED (Partial System Outage)
-- Hugging Face: UNREACHABLE (Provider health probe timed out.)
+- Hugging Face: UNREACHABLE (Instatus health probe timed out.)
