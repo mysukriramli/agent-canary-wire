@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-22T08:13:35.626648+00:00",
+    "timestamp_utc": "2026-10-22T08:17:48.546520+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -50,9 +50,9 @@
       ]
     },
     "huggingface": {
-      "status": "UNREACHABLE",
-      "severity": "critical",
-      "description": "Instatus health probe timed out.",
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "System status: operational",
       "active_incident_count": 0,
       "incidents": []
     }
