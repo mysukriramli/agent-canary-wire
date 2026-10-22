@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Agent Canary Wire - Real-Time AI Gateway & Provider Status Monitor
-Runs high-frequency health checks across foundation model providers
-to generate instant failover directives for autonomous agent runtimes.
+Runs high-frequency health checks across foundation model providers,
+emits instant routing directives, and appends time-series records to historical archives.
 """
 
 import os
@@ -15,6 +15,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 
 OUTPUT_JSON = "latest/canary.json"
 OUTPUT_LLMS = "latest/llms.txt"
+HISTORY_BASE_DIR = "data/history"
 
 TARGET_PROVIDERS = {
     "openai": "https://status.openai.com/api/v2/summary.json",
@@ -87,7 +88,11 @@ def main():
         results[name] = inspect_provider(name, url)
 
     recommended_llm, directive = determine_routing(results)
-    now_iso = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(timezone.utc)
+    now_iso = now.isoformat()
+    date_str = now.strftime("%Y-%m-%d")
+    year_str = now.strftime("%Y")
+    month_str = now.strftime("%m")
 
     payload = {
         "metadata": {
@@ -102,8 +107,8 @@ def main():
         "providers": results
     }
 
+    # 1. Update rolling hot endpoints
     os.makedirs("latest", exist_ok=True)
-
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
@@ -121,7 +126,26 @@ def main():
     with open(OUTPUT_LLMS, "w", encoding="utf-8") as f:
         f.write(llms_text)
 
-    logging.info(f"Canary pulse complete. Primary route: {recommended_llm}")
+    # 2. Append to permanent daily time-series ledger (Database Keeping)
+    month_dir = os.path.join(HISTORY_BASE_DIR, year_str, month_str)
+    os.makedirs(month_dir, exist_ok=True)
+    history_file = os.path.join(month_dir, f"{date_str}.jsonl")
+
+    # One compact JSON line per 30-minute run
+    ledger_entry = {
+        "timestamp_utc": now_iso,
+        "recommended_route": recommended_llm,
+        "openai": results["openai"]["status"],
+        "anthropic": results["anthropic"]["status"],
+        "github": results["github_copilot"]["status"],
+        "cloudflare": results["cloudflare"]["status"],
+        "huggingface": results["huggingface"]["status"]
+    }
+
+    with open(history_file, "a", encoding="utf-8") as f:
+        f.write(json.dumps(ledger_entry) + "\n")
+
+    logging.info(f"Canary pulse complete. Appended run to {history_file}.")
 
 if __name__ == "__main__":
     main()
