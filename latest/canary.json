@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-23T05:26:45.533804+00:00",
+    "timestamp_utc": "2026-10-23T10:32:26.674863+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,14 +13,8 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Delays in customer support responses",
-          "impact": "none",
-          "status": "identified"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -40,14 +34,8 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Support Helpdesk Availability Issues",
-          "impact": "minor",
-          "status": "identified"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "huggingface": {
       "status": "OPERATIONAL",
