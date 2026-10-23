@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-23T00:41:42.555604+00:00",
+    "timestamp_utc": "2026-10-23T05:26:45.533804+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,8 +13,14 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Delays in customer support responses",
+          "impact": "none",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -27,21 +33,21 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Project updates delayed",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "cloudflare": {
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Support Helpdesk Availability Issues",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
