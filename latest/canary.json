@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-23T15:29:27.508371+00:00",
+    "timestamp_utc": "2026-10-23T19:33:37.505033+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -27,14 +27,8 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Disruption with Dependabot Alerts",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "cloudflare": {
       "status": "DEGRADED",
@@ -44,7 +38,7 @@
       "incidents": [
         {
           "name": "Delayed, missed, and duplicated Workers Cron Triggers",
-          "impact": "critical",
+          "impact": "minor",
           "status": "investigating"
         }
       ]
