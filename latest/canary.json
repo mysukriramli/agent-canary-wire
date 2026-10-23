@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-22T21:55:59.970677+00:00",
+    "timestamp_utc": "2026-10-23T00:41:42.555604+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,16 +11,10 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partial System Degradation",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "New Ad Accounts failing to provision admins",
-          "impact": "minor",
-          "status": "identified"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -36,7 +30,7 @@
       "active_incident_count": 1,
       "incidents": [
         {
-          "name": "Errors loading Issues, Pull Requests, and search results",
+          "name": "Project updates delayed",
           "impact": "minor",
           "status": "investigating"
         }
@@ -46,19 +40,8 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 3,
-      "incidents": [
-        {
-          "name": "Elevated error rates for Durable Objects in Western Europe",
-          "impact": "minor",
-          "status": "monitoring"
-        },
-        {
-          "name": "Delayed audit log delivery for WARP and Zero Trust services",
-          "impact": "major",
-          "status": "monitoring"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "huggingface": {
       "status": "OPERATIONAL",
