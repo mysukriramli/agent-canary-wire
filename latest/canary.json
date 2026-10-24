@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-24T01:08:56.174204+00:00",
+    "timestamp_utc": "2026-10-24T05:56:20.230813+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,14 +34,8 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Network Performance Issues in Ashburn",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "huggingface": {
       "status": "OPERATIONAL",
