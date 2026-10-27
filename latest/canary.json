@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-27T10:37:22.099383+00:00",
+    "timestamp_utc": "2026-10-27T16:02:14.260577+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,13 +11,13 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
+      "severity": "minor",
+      "description": "Partial System Degradation",
       "active_incident_count": 1,
       "incidents": [
         {
-          "name": "Elevated error rates for most hosted Code Reviews and Security Reviews on private GitHub repositories",
-          "impact": "none",
+          "name": "6.1 Sol Degraded Model Performance",
+          "impact": "minor",
           "status": "monitoring"
         }
       ]
@@ -40,8 +40,14 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Cache Purging Delays Affecting Requests Routed Through EEUR",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
