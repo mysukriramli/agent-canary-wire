@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-28T12:58:55.741111+00:00",
+    "timestamp_utc": "2026-10-28T18:52:56.480318+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -18,10 +18,16 @@
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors affecting the Google Calendar connector",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
