@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-28T00:05:26.715865+00:00",
+    "timestamp_utc": "2026-10-28T05:45:55.915329+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -18,10 +18,16 @@
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors affecting the Gmail connector",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
@@ -34,8 +40,14 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Network Performance Issues in Ashburn, IAD",
+          "impact": "minor",
+          "status": "monitoring"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
