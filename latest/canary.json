@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-29T16:56:29.348013+00:00",
+    "timestamp_utc": "2026-10-29T21:49:14.085603+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,8 +34,14 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "R2 Elevated Latency in Eastern Europe",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
