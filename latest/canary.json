@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-29T02:55:00.130471+00:00",
+    "timestamp_utc": "2026-10-29T10:00:51.230635+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,8 +34,19 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 2,
+      "incidents": [
+        {
+          "name": "Increased error rates and reduced success rates for Workflows operations",
+          "impact": "minor",
+          "status": "investigating"
+        },
+        {
+          "name": "Increased D1 Error Rates",
+          "impact": "minor",
+          "status": "monitoring"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
