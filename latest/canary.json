@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-30T08:41:07.328065+00:00",
+    "timestamp_utc": "2026-10-30T15:22:11.215776+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,10 +11,16 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors for GPT Image 2 API image edits",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
