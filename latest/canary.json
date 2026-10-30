@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-30T20:09:18.697305+00:00",
+    "timestamp_utc": "2026-10-30T23:49:58.361477+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,16 +11,10 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partial System Degradation",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Elevated errors with search in Dots, ChatGPT Work, and certain ChatGPT thinking experiences",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
