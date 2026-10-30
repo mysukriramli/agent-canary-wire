@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-10-30T15:22:11.215776+00:00",
+    "timestamp_utc": "2026-10-30T20:09:18.697305+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -16,9 +16,9 @@
       "active_incident_count": 1,
       "incidents": [
         {
-          "name": "Elevated errors for GPT Image 2 API image edits",
+          "name": "Elevated errors with search in Dots, ChatGPT Work, and certain ChatGPT thinking experiences",
           "impact": "minor",
-          "status": "identified"
+          "status": "investigating"
         }
       ]
     },
