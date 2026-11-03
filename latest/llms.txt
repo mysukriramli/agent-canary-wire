@@ -1,4 +1,4 @@
-# AI Provider Canary Status (2026-11-03T17:51:41.797261+00:00)
+# AI Provider Canary Status (2026-11-03T23:25:22.375781+00:00)
 > Recommended Gateway: `OPENAI`
 
 **Directive:** All primary foundation gateways operational. Route traffic normally.
