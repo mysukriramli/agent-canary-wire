@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-02T19:48:18.228587+00:00",
+    "timestamp_utc": "2026-11-03T02:22:01.870522+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,10 +11,16 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "File upload errors in ChatGPT",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
