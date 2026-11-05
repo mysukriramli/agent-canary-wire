@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-05T15:49:40.624315+00:00",
+    "timestamp_utc": "2026-11-05T22:00:28.249762+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,14 +11,14 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partial System Degradation",
+      "severity": "none",
+      "description": "All Systems Operational",
       "active_incident_count": 1,
       "incidents": [
         {
-          "name": "ChatGPT Issues",
+          "name": "ChatGPT Work and Dots Errors",
           "impact": "minor",
-          "status": "investigating"
+          "status": "monitoring"
         }
       ]
     },
@@ -40,13 +40,8 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
-        {
-          "name": "Network disruption across multiple colocations in India",
-          "impact": "minor",
-          "status": "identified"
-        },
         {
           "name": "Increased Errors for Durable Objects in Western Europe",
           "impact": "minor",
