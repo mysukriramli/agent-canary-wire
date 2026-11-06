@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-06T17:31:31.406894+00:00",
+    "timestamp_utc": "2026-11-06T22:24:55.796405+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,8 +13,14 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated error rates with Brex Cards and U.S. business Mastercards",
+          "impact": "none",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -34,8 +40,14 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Fedramp Customers have Delayed Purges",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "huggingface": {
       "status": "OPERATIONAL",
