@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-06T09:55:05.400876+00:00",
+    "timestamp_utc": "2026-11-06T17:31:31.406894+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,19 +34,8 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 2,
-      "incidents": [
-        {
-          "name": "Wrangler Deployments, Pages, and Workers Builds failures",
-          "impact": "minor",
-          "status": "monitoring"
-        },
-        {
-          "name": "Network Performance Issues in Singapore",
-          "impact": "minor",
-          "status": "monitoring"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "huggingface": {
       "status": "OPERATIONAL",
