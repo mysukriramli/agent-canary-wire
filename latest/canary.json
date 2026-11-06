@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-06T02:29:10.809719+00:00",
+    "timestamp_utc": "2026-11-06T09:55:05.400876+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,14 +13,8 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "ChatGPT Work and Dots Errors",
-          "impact": "minor",
-          "status": "monitoring"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -40,10 +34,15 @@
       "status": "DEGRADED",
       "severity": "major",
       "description": "Partial System Outage",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Increased Errors for Durable Objects in Western Europe",
+          "name": "Wrangler Deployments, Pages, and Workers Builds failures",
+          "impact": "minor",
+          "status": "monitoring"
+        },
+        {
+          "name": "Network Performance Issues in Singapore",
           "impact": "minor",
           "status": "monitoring"
         }
