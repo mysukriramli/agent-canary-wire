@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-09T09:52:35.510627+00:00",
+    "timestamp_utc": "2026-11-09T20:46:17.082455+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -43,7 +43,7 @@
       "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Spectrum Availability Issue in Phoenix",
+          "name": "Changes made to Workers may be delayed or disrupted",
           "impact": "minor",
           "status": "monitoring"
         },
