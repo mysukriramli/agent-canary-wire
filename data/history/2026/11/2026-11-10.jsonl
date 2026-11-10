@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-11-10T03:35:37.434432+00:00", "recommended_route": "openai", "openai": "OPERATIONAL", "anthropic": "OPERATIONAL", "github": "OPERATIONAL", "cloudflare": "DEGRADED", "huggingface": "OPERATIONAL"}

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-09T20:46:17.082455+00:00",
+    "timestamp_utc": "2026-11-10T03:35:37.434432+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -43,9 +43,9 @@
       "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Changes made to Workers may be delayed or disrupted",
+          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
-          "status": "monitoring"
+          "status": "investigating"
         },
         {
           "name": "Fedramp Customers have Delayed Purges",
