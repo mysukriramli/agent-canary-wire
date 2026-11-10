@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-10T11:48:29.410329+00:00",
+    "timestamp_utc": "2026-11-10T19:45:35.599336+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,14 +13,8 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Elevated error rates with some U.S. business Mastercards",
-          "impact": "none",
-          "status": "monitoring"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -37,9 +31,9 @@
       "incidents": []
     },
     "cloudflare": {
-      "status": "DEGRADED",
-      "severity": "major",
-      "description": "Partial System Outage",
+      "status": "OPERATIONAL",
+      "severity": "minor",
+      "description": "Partially Degraded Service",
       "active_incident_count": 2,
       "incidents": [
         {
