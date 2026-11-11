@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-10T19:45:35.599336+00:00",
+    "timestamp_utc": "2026-11-11T00:40:45.606147+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,17 +34,17 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 3,
       "incidents": [
+        {
+          "name": "Network Performance Issues in St. Louis, USA",
+          "impact": "minor",
+          "status": "monitoring"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
           "status": "investigating"
-        },
-        {
-          "name": "Fedramp Customers have Delayed Purges",
-          "impact": "minor",
-          "status": "identified"
         }
       ]
     },
