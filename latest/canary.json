@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-11T00:40:45.606147+00:00",
+    "timestamp_utc": "2026-11-11T07:14:18.496589+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -37,14 +37,14 @@
       "active_incident_count": 3,
       "incidents": [
         {
-          "name": "Network Performance Issues in St. Louis, USA",
+          "name": "Replicate Input Upload Issue",
           "impact": "minor",
-          "status": "monitoring"
+          "status": "identified"
         },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
-          "status": "investigating"
+          "status": "identified"
         }
       ]
     },
