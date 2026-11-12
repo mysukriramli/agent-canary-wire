@@ -1,26 +1,20 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-12T03:24:12.830502+00:00",
+    "timestamp_utc": "2026-11-12T11:52:59.484951+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
   "routing_directive": {
-    "recommended_primary_llm": "anthropic",
-    "action": "FAILOVER ACTIVE: OpenAI is degraded/unreachable. Divert calls to Anthropic Claude."
+    "recommended_primary_llm": "openai",
+    "action": "All primary foundation gateways operational. Route traffic normally."
   },
   "providers": {
     "openai": {
-      "status": "DEGRADED",
-      "severity": "critical",
-      "description": "Major System Outage",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Unable to start new Workspace Agent runs",
-          "impact": "critical",
-          "status": "investigating"
-        }
-      ]
+      "status": "OPERATIONAL",
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
