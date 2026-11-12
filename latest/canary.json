@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-12T11:52:59.484951+00:00",
+    "timestamp_utc": "2026-11-12T19:56:26.599030+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,30 +11,48 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors affecting the Microsoft 365 connector",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Minor Service Outage",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors affecting the Microsoft 365 connector",
+          "impact": "major",
+          "status": "identified"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Disruption with Sign-in and Sign-up",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "cloudflare": {
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 3,
+      "active_incident_count": 2,
       "incidents": [
         {
           "name": "Replicate Model Registry Unavailable",
