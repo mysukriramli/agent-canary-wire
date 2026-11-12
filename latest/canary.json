@@ -1,20 +1,26 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-11T22:17:32.594819+00:00",
+    "timestamp_utc": "2026-11-12T03:24:12.830502+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
   "routing_directive": {
-    "recommended_primary_llm": "openai",
-    "action": "All primary foundation gateways operational. Route traffic normally."
+    "recommended_primary_llm": "anthropic",
+    "action": "FAILOVER ACTIVE: OpenAI is degraded/unreachable. Divert calls to Anthropic Claude."
   },
   "providers": {
     "openai": {
-      "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "status": "DEGRADED",
+      "severity": "critical",
+      "description": "Major System Outage",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Unable to start new Workspace Agent runs",
+          "impact": "critical",
+          "status": "investigating"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -37,7 +43,7 @@
       "active_incident_count": 3,
       "incidents": [
         {
-          "name": "Replicate Input Upload Issue",
+          "name": "Replicate Model Registry Unavailable",
           "impact": "minor",
           "status": "identified"
         },

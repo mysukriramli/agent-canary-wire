@@ -1,9 +1,9 @@
-# AI Provider Canary Status (2026-11-11T22:17:32.594819+00:00)
-> Recommended Gateway: `OPENAI`
+# AI Provider Canary Status (2026-11-12T03:24:12.830502+00:00)
+> Recommended Gateway: `ANTHROPIC`
 
-**Directive:** All primary foundation gateways operational. Route traffic normally.
+**Directive:** FAILOVER ACTIVE: OpenAI is degraded/unreachable. Divert calls to Anthropic Claude.
 
-- OpenAI: OPERATIONAL (All Systems Operational)
+- OpenAI: DEGRADED (Major System Outage)
 - Anthropic: OPERATIONAL (All Systems Operational)
 - GitHub: OPERATIONAL (All Systems Operational)
 - Cloudflare: OPERATIONAL (Partially Degraded Service)
