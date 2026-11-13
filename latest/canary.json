@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-13T01:06:11.492713+00:00",
+    "timestamp_utc": "2026-11-13T08:01:24.193290+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -46,17 +46,12 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 3,
+      "active_incident_count": 1,
       "incidents": [
         {
-          "name": "Durable Objects increased error rates in North America",
+          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
-          "status": "monitoring"
-        },
-        {
-          "name": "Replicate Model Registry Unavailable",
-          "impact": "minor",
-          "status": "monitoring"
+          "status": "identified"
         }
       ]
     },
