@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-13T16:27:19.758177+00:00",
+    "timestamp_utc": "2026-11-13T22:12:37.501273+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -16,42 +16,30 @@
       "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Elevated errors affecting the Microsoft 365 connector",
+          "name": "Delayed Costs Data in the Compliance API",
           "impact": "minor",
           "status": "monitoring"
         },
         {
-          "name": "Delayed Costs Data in the Compliance API",
+          "name": "Elevated errors affecting the Microsoft 365 connector",
           "impact": "minor",
-          "status": "identified"
+          "status": "monitoring"
         }
       ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Elevated errors affecting the Microsoft 365 connector",
-          "impact": "major",
-          "status": "monitoring"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "github_copilot": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Incident with Pull Requests",
-          "impact": "major",
-          "status": "investigating"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "cloudflare": {
       "status": "OPERATIONAL",
