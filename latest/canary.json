@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-14T02:29:59.629102+00:00",
+    "timestamp_utc": "2026-11-14T09:27:05.804345+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -24,10 +24,16 @@
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Some users unable to sign up with Apple on the Claude iOS app",
+          "impact": "major",
+          "status": "investigating"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",

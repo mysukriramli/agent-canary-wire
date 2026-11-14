@@ -1,10 +1,10 @@
-# AI Provider Canary Status (2026-11-14T02:29:59.629102+00:00)
+# AI Provider Canary Status (2026-11-14T09:27:05.804345+00:00)
 > Recommended Gateway: `OPENAI`
 
 **Directive:** All primary foundation gateways operational. Route traffic normally.
 
 - OpenAI: OPERATIONAL (Partial System Degradation)
-- Anthropic: OPERATIONAL (All Systems Operational)
+- Anthropic: OPERATIONAL (Partially Degraded Service)
 - GitHub: OPERATIONAL (All Systems Operational)
 - Cloudflare: OPERATIONAL (Partially Degraded Service)
 - Hugging Face: OPERATIONAL (System status: operational)
