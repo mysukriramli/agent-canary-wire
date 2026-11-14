@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-13T22:12:37.501273+00:00",
+    "timestamp_utc": "2026-11-14T02:29:59.629102+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -13,15 +13,10 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partial System Degradation",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
         {
           "name": "Delayed Costs Data in the Compliance API",
-          "impact": "minor",
-          "status": "monitoring"
-        },
-        {
-          "name": "Elevated errors affecting the Microsoft 365 connector",
           "impact": "minor",
           "status": "monitoring"
         }
@@ -45,7 +40,7 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 3,
+      "active_incident_count": 2,
       "incidents": [
         {
           "name": "Cloudflare is seeing an issue with Workers API availability",
@@ -53,7 +48,7 @@
           "status": "monitoring"
         },
         {
-          "name": "Cloudflare is currently having an issue with the r8.im registry used for Replicate model publishing and builds is currently restricted",
+          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
           "status": "identified"
         }
