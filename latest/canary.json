@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-16T07:19:55.434981+00:00",
+    "timestamp_utc": "2026-11-16T17:28:50.730532+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -20,8 +20,13 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Claude unable to join meetings",
+          "impact": "major",
+          "status": "investigating"
+        },
         {
           "name": "Some users unable to sign up with Apple on the Claude iOS app",
           "impact": "major",
