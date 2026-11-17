@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-16T17:28:50.730532+00:00",
+    "timestamp_utc": "2026-11-17T01:05:54.825513+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -20,15 +20,10 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
         {
           "name": "Claude unable to join meetings",
-          "impact": "major",
-          "status": "investigating"
-        },
-        {
-          "name": "Some users unable to sign up with Apple on the Claude iOS app",
           "impact": "major",
           "status": "investigating"
         }
@@ -45,8 +40,13 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Network Performance Issues in Ashburn, US",
+          "impact": "minor",
+          "status": "monitoring"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
