@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-17T09:14:35.119391+00:00",
+    "timestamp_utc": "2026-11-17T18:46:37.551901+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,10 +11,16 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Costs API data is delayed",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -40,8 +46,13 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Errors and stalled predictions on some models",
+          "impact": "minor",
+          "status": "identified"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
