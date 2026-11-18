@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-18T09:12:18.897555+00:00",
+    "timestamp_utc": "2026-11-18T18:10:19.944011+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,16 +11,10 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partial System Degradation",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Costs API data is delayed",
-          "impact": "minor",
-          "status": "monitoring"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -37,16 +31,10 @@
     },
     "github_copilot": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Degraded Availability for MAI Code 2 Flash in Copilot",
-          "impact": "minor",
-          "status": "investigating"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "cloudflare": {
       "status": "OPERATIONAL",
