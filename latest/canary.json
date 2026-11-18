@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-17T18:46:37.551901+00:00",
+    "timestamp_utc": "2026-11-18T01:38:02.928365+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -18,7 +18,7 @@
         {
           "name": "Costs API data is delayed",
           "impact": "minor",
-          "status": "investigating"
+          "status": "monitoring"
         }
       ]
     },
@@ -26,12 +26,17 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
         {
           "name": "Claude unable to join meetings",
-          "impact": "major",
+          "impact": "minor",
           "status": "identified"
+        },
+        {
+          "name": "Elevated errors affecting the Google Docs connector",
+          "impact": "minor",
+          "status": "investigating"
         }
       ]
     },
@@ -46,15 +51,15 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 3,
       "incidents": [
         {
-          "name": "Errors and stalled predictions on some models",
+          "name": "Cloudflare Access Issue",
           "impact": "minor",
           "status": "identified"
         },
         {
-          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+          "name": "Errors and stalled predictions on some models",
           "impact": "minor",
           "status": "identified"
         }
