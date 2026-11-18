@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-18T01:38:02.928365+00:00",
+    "timestamp_utc": "2026-11-18T09:12:18.897555+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -26,40 +26,36 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
         {
           "name": "Claude unable to join meetings",
           "impact": "minor",
           "status": "identified"
-        },
-        {
-          "name": "Elevated errors affecting the Google Docs connector",
-          "impact": "minor",
-          "status": "investigating"
         }
       ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Degraded Availability for MAI Code 2 Flash in Copilot",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "cloudflare": {
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 3,
+      "active_incident_count": 1,
       "incidents": [
         {
-          "name": "Cloudflare Access Issue",
-          "impact": "minor",
-          "status": "identified"
-        },
-        {
-          "name": "Errors and stalled predictions on some models",
+          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
           "status": "identified"
         }
