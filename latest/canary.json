@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-19T07:58:07.826420+00:00",
+    "timestamp_utc": "2026-11-19T17:23:43.450433+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -27,8 +27,14 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Disruption with some GitHub services",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "cloudflare": {
       "status": "OPERATIONAL",
@@ -37,7 +43,7 @@
       "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Cloudflare Access Issue",
+          "name": "Observability ingestion delay and query failures",
           "impact": "minor",
           "status": "identified"
         },
