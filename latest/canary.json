@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-18T18:10:19.944011+00:00",
+    "timestamp_utc": "2026-11-19T00:26:25.596721+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -40,8 +40,13 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Degraded connectivity between Europe and Asia Pacific",
+          "impact": "minor",
+          "status": "identified"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
