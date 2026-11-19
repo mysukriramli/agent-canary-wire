@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-19T00:26:25.596721+00:00",
+    "timestamp_utc": "2026-11-19T07:58:07.826420+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -18,16 +18,10 @@
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Claude unable to join meetings",
-          "impact": "minor",
-          "status": "identified"
-        }
-      ]
+      "severity": "none",
+      "description": "All Systems Operational",
+      "active_incident_count": 0,
+      "incidents": []
     },
     "github_copilot": {
       "status": "OPERATIONAL",
@@ -43,7 +37,7 @@
       "active_incident_count": 2,
       "incidents": [
         {
-          "name": "Degraded connectivity between Europe and Asia Pacific",
+          "name": "Cloudflare Access Issue",
           "impact": "minor",
           "status": "identified"
         },
