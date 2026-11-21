@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-21T03:59:28.659525+00:00",
+    "timestamp_utc": "2026-11-21T12:41:10.519214+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -34,13 +34,8 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
-        {
-          "name": "Network Performance Issues in Washington, DC datacenter (IAD)",
-          "impact": "minor",
-          "status": "monitoring"
-        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
