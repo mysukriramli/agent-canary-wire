@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-23T10:49:02.646529+00:00",
+    "timestamp_utc": "2026-11-23T22:40:31.955693+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -20,14 +20,8 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 1,
-      "incidents": [
-        {
-          "name": "Elevated errors for multiple models",
-          "impact": "major",
-          "status": "monitoring"
-        }
-      ]
+      "active_incident_count": 0,
+      "incidents": []
     },
     "github_copilot": {
       "status": "OPERATIONAL",
@@ -40,8 +34,13 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Cloudflare Workers API \u2013 Delayed or Inconsistent Responses",
+          "impact": "minor",
+          "status": "investigating"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
