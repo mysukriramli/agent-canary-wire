@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-23T01:59:38.070649+00:00",
+    "timestamp_utc": "2026-11-23T10:49:02.646529+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -20,8 +20,14 @@
       "status": "OPERATIONAL",
       "severity": "none",
       "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Elevated errors for multiple models",
+          "impact": "major",
+          "status": "monitoring"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
