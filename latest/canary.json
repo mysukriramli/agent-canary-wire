@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-23T22:40:31.955693+00:00",
+    "timestamp_utc": "2026-11-24T06:28:04.683366+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -18,10 +18,16 @@
     },
     "anthropic": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "Claude for Microsoft 365 add-in missing for some users",
+          "impact": "minor",
+          "status": "investigating"
+        }
+      ]
     },
     "github_copilot": {
       "status": "OPERATIONAL",
@@ -39,7 +45,7 @@
         {
           "name": "Cloudflare Workers API \u2013 Delayed or Inconsistent Responses",
           "impact": "minor",
-          "status": "investigating"
+          "status": "identified"
         },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
