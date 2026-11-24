@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-24T06:28:04.683366+00:00",
+    "timestamp_utc": "2026-11-24T18:21:34.198156+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -24,7 +24,7 @@
       "incidents": [
         {
           "name": "Claude for Microsoft 365 add-in missing for some users",
-          "impact": "minor",
+          "impact": "major",
           "status": "investigating"
         }
       ]
@@ -39,17 +39,17 @@
     "cloudflare": {
       "status": "OPERATIONAL",
       "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "description": "Minor Service Outage",
+      "active_incident_count": 4,
       "incidents": [
         {
-          "name": "Cloudflare Workers API \u2013 Delayed or Inconsistent Responses",
+          "name": "Issues with Email Routing in France",
           "impact": "minor",
           "status": "identified"
         },
         {
-          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
-          "impact": "minor",
+          "name": "Magic Transit Degraded Performance",
+          "impact": "major",
           "status": "identified"
         }
       ]
