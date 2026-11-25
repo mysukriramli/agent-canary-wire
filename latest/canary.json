@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-25T02:48:27.502484+00:00",
+    "timestamp_utc": "2026-11-25T12:58:58.263667+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -11,10 +11,16 @@
   "providers": {
     "openai": {
       "status": "OPERATIONAL",
-      "severity": "none",
-      "description": "All Systems Operational",
-      "active_incident_count": 0,
-      "incidents": []
+      "severity": "minor",
+      "description": "Partial System Degradation",
+      "active_incident_count": 1,
+      "incidents": [
+        {
+          "name": "ChatGPT and Codex Cloud are experiencing elevated conversation errors",
+          "impact": "minor",
+          "status": "identified"
+        }
+      ]
     },
     "anthropic": {
       "status": "OPERATIONAL",
@@ -39,14 +45,9 @@
     "cloudflare": {
       "status": "OPERATIONAL",
       "severity": "minor",
-      "description": "Minor Service Outage",
-      "active_incident_count": 2,
+      "description": "Partially Degraded Service",
+      "active_incident_count": 1,
       "incidents": [
-        {
-          "name": "Magic Transit Degraded Performance",
-          "impact": "major",
-          "status": "identified"
-        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
