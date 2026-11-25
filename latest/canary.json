@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-24T18:21:34.198156+00:00",
+    "timestamp_utc": "2026-11-25T02:48:27.502484+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -40,16 +40,16 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Minor Service Outage",
-      "active_incident_count": 4,
+      "active_incident_count": 2,
       "incidents": [
-        {
-          "name": "Issues with Email Routing in France",
-          "impact": "minor",
-          "status": "identified"
-        },
         {
           "name": "Magic Transit Degraded Performance",
           "impact": "major",
+          "status": "identified"
+        },
+        {
+          "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+          "impact": "minor",
           "status": "identified"
         }
       ]
