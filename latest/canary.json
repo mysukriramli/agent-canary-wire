@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-25T22:34:43.359491+00:00",
+    "timestamp_utc": "2026-11-26T04:26:27.123525+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -46,13 +46,8 @@
       "status": "OPERATIONAL",
       "severity": "minor",
       "description": "Partially Degraded Service",
-      "active_incident_count": 2,
+      "active_incident_count": 1,
       "incidents": [
-        {
-          "name": "Elevated R2 Latency",
-          "impact": "minor",
-          "status": "monitoring"
-        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
