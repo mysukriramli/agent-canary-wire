@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-27T15:37:45.500336+00:00",
+    "timestamp_utc": "2026-11-27T23:44:49.748575+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -25,7 +25,7 @@
         {
           "name": "Claude for Microsoft 365 add-in missing for some users",
           "impact": "major",
-          "status": "identified"
+          "status": "monitoring"
         }
       ]
     },
