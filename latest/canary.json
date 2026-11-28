@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-27T23:44:49.748575+00:00",
+    "timestamp_utc": "2026-11-28T07:52:38.393169+00:00",
     "schema_version": "1.0.0",
     "check_frequency_minutes": 30
   },
@@ -37,11 +37,16 @@
       "incidents": []
     },
     "cloudflare": {
-      "status": "OPERATIONAL",
-      "severity": "minor",
-      "description": "Partially Degraded Service",
-      "active_incident_count": 1,
+      "status": "DEGRADED",
+      "severity": "major",
+      "description": "Partial System Outage",
+      "active_incident_count": 2,
       "incidents": [
+        {
+          "name": "Email Delivery Delays",
+          "impact": "critical",
+          "status": "investigating"
+        },
         {
           "name": "Changes to Cloudflare Workers are not producing Event Subscription events",
           "impact": "minor",
